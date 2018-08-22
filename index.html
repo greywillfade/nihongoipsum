@@ -5,29 +5,45 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Kosugi|Roboto" rel="stylesheet">
         
     </head>
     <body>
         
-        <div id="app">
-            <p>I would like 
-            <select v-model="ipsumNo" @change="showText">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-            {{parawording}} please</p>
 
-            <button v-on:click="showText">Shuffle</button>
+        <!-- Coloured pattern-->
+        <div class="bg-img1 overlay1">
 
-            <div v-html="this.message" class="genholder">
-				
-			</div>
-        </div>
+            <div class="wrapper">
+                <aside class="sidebar">
+                    <h1>日本語 <span class="english">ipsum</span></h1>
+                    <h2 class="english">A lorem ipsum generator of Japanese text, including hiragana, katakana, and kanji</h2>
+                </aside>
+                <article class="content">
+                    <div id="app">
+                        <p> 
+                        <select v-model="ipsumNo" @change="showText">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        <span class="english">{{parawording}}</span>, お願いします</p>
+                            
+                        <button v-on:click="showText">Shuffle</button>
+                        <div v-html="this.message" class="genholder"></div>
+                    </div>
+                </article>
+                <footer class="footer">
+                        <p class="english">Site by <a href="https://sallylait.com">Sally Lait</a></p>
+                        <p class="english">Thanks to <a href="https://tatoeba.org/eng/downloads">Tatoeba</a> for their CC BY 2.0 licensing of the example sentences.</p>
 
-        <p>Thanks to <a href="https://tatoeba.org/eng/downloads">Tatoeba</a> for their CC BY 2.0 licensing of the example sentences.</p>
+                </footer>
+            </div>
+        </div><!--End bg-->
+
+
         
        <script src="js/main.js" charset="UTF-8"></script>
         
